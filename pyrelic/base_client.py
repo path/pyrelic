@@ -1,4 +1,4 @@
-import pyrelic.packages.requests as requests
+import requests
 import logging
 
 from time import sleep

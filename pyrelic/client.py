@@ -1,6 +1,6 @@
 import datetime
 
-from pyrelic.packages.elementtree import ElementTree as etree
+import xml.etree.ElementTree as ET
 
 from .exceptions import (
     NewRelicApiRateLimitException,
@@ -60,7 +60,7 @@ client = pyrelic.Client(account_id='12345', api_key='1234567890abcdef123456789')
         """
         if response.startswith('\n'):
             response = response[1:]
-        tree = etree.fromstring(response)
+        tree = ET.fromstring(response)
         return tree
 
     def _handle_api_error(self, error):
